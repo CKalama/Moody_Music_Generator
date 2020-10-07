@@ -3,11 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home Page</title>
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="./reset.css">
+    <!-- Framework 6.6..3 - https://get.foundation/sites/docs/ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <!-- Our Style CSS -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1> Site coming soon!!!</h1>
+    <nav class="top-bar">
+        <div class="top-bar-left">
+            <ul class="menu">
+                <li class="menu-text">Moody Music</li>
+                <li><a href="#">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="history.html">Music History</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br>
 
-    <h1> ben makes a change!! BUT JUSTIN EDITED TOOO!!!</h1>
+    <header>
+        <h1 style="text-align: center;">Select an Emotion for a Song!</h1>
+    </header>
+    <br>
+
+<div class="grid-container">
+    <div class="grid-y grid-margin-x">
+        <div class="cell medium-2">
+            <button class="hollow button" id="happy">Super Elated!</button>
+        </div>
+        <div class="cell medium-2">
+            <button class="hollow button" id="sad">Not Having the Best Day :( !</button>
+        </div>
+        <div class="cell medium-2">
+            <button class="hollow button" id="party">Ready to Party!</button>
+        </div>
+        <div class="cell medium-2">
+            <button class="hollow button" id="study">Study/Meditation</button>
+        </div>
+        <div class="cell medium-2">
+            <button class="hollow button" id="sentimental">In Ya Feels</button>
+        </div>
+        <div class="cell medium-2">
+            <button class="hollow button" id="random">Im Feeling Lucky</button>
+        </div>
+        
+        
+    </div>
+</div>
+    <!-- <button class="hollow button" href="#">Emotion</button>
+    <br>
+    <button class="hollow button" href="#">Emotion</button> -->
+        
+    
+
+    
+
+
+
+    <footer>
+        <hr>
+    </footer>
+
+
+
+
+
+
+
+    <!-- Linking JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <!-- Linking Javascript -->
+    <script src="./script.js"></script>
 </body>
 </html>
