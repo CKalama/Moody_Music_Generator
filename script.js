@@ -86,7 +86,7 @@ $(document).ready(function(){
                     happyObj["song"] = song;
                     happyObj["artist"] = artist;
                     happyArray.push(happyObj);
-                    localStorage.setItem("happySongs", JSON.stringify(happyArray));
+                    localStorage.setItem("happySongs", JSON.stringify(happyArray));               
                     break;
                 case document.getElementById("sad") :
                     $(".emo").append(songDiv, artDiv);
@@ -132,52 +132,41 @@ $(document).ready(function(){
                     break;
             };
 
-            // Put song and artist into object. Object will be put into array. Call from LocalStorage
-            
-            // var happyObj = {};
-            // happyObj["song"] = song;
-            // happyObj["artist"] = artist;
-            // happyArray.push(happyObj);
-       
-            
-            
-            // .parent().append(songDiv, artDiv);
+           
 
-            // $("#sad").on("click", () => {
-            //     // genre -> genreId
-            //     // grab track array from response
-            //     var sadTracks = obj.message.body.track_list; // array of objects
-            //     // console.log(sadTracks);
-            //     // math.random -> array[index = random number]
-            //         // var ran = Math.floor(Math.random()*sadTracks.length);
-            //         // var ranTrack = sadTracks[ran];
-            //     var ranTrack = sadTracks[Math.floor(Math.random()*sadTracks.length)];
-            //     // console.log(ranTrack);
-            //     // grab track_name and artist_name from selected array[i] & display in div
-            //     // console.log(ranTrack.track.track_name);
-            //     // console.log(ranTrack.track.artist_name);
-            //     var songDiv = $("<div>").text(ranTrack.track.track_name);
-            //     var artDiv = $("<div>").text(ranTrack.track.artist_name);
-            //     $("#sad").parent().append(songDiv, artDiv);
-            // });
+            //Getting setItem to display onto History Screen
+            //     Localstorage.getItem
+            //     var x = JSON.parse(happyArray[1])
+            // localStorage.getItem("happySongs");
+            //     console.log(x);
+
+
+
 
 
 
 
 
         });
-    });
+    
+    
+    
+    
+    
+    
+    
+    
+
+
 
     
-    //Setting up Saving an item to Local Storage
-//     $(document).ready(function() {
-//              $(".button").on("click", function(){
-//         var musicSave = $(this).parent().attr("data-genre");
-//         var textSave= $(this).siblings("songDiv, artDiv").val();
-//         localStorage.setItem(musicSave, textSave);
-        
-//     })
-// });
+    });
+
+    var x = JSON.parse(localStorage.getItem("happySongs"))
+    console.log(x);
+    
+   
+
 
 
 
