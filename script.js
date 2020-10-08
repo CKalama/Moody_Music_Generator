@@ -47,6 +47,16 @@ $(document).ready(function(){
         var obj = JSON.parse(response);
         console.log(obj);
 
+        // create click event on mood button
+        // document.getElementById("sad");
+        // document.querySelector("#sad"); // $("#sad"); // get element by id
+        $("#sad").on("click", () => {
+            // genre -> genreId
+            // grab track array from response
+            // math.random -> array[index = random number]
+            // grab track_name and artist_name from selected array[i]
+        });
+
 
 
 
