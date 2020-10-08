@@ -43,9 +43,22 @@ $(document).ready(function(){
         method: "GET"
     }).then(function(response){
 
-        console.log(response);
+        //gives a string
+        var obj = JSON.parse(response);
+        console.log(obj);
 
+        //console.log(response);
 
+        $('#sad').on("click", () => {
+            // mood -> genreId
+                var sadTracks = //array 
+                    response.message.body.track_list;
+                    console.log(sadTracks)
+            //grab track array from response
+                //Needed from object in API-> track_name, artist_name, track_shareURL
+            //for loop --> Math.random
+            //grab track name and artist
+        });
 
 
     });
