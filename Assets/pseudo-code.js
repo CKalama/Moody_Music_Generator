@@ -49,6 +49,23 @@
                     // if (user yes): present quote and then song under it
                     // else: present only song
 
+        //Making a complex array so that we can store every song into Local Storage
+    // var array = [
+    //     [
+    //         {
+    //             song:
+    //             artist:
+    //         }
+    //     ],
+    //     [
+    //         {
+    //             song:
+    //             artist:
+    //         }
+    //     ],
+        
+    // ];
+
 // ABOUT PAGE -- if mvp works and we have time!
 // User perspective: user hover over picture, see staffs' other pic
     // css pseudo class :hover on the img div
