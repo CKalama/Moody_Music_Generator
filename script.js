@@ -45,7 +45,7 @@ $(document).ready(function(){
 
         // console.log(response); // gives string
         var obj = JSON.parse(response);
-        console.log(obj);
+        // console.log(obj);
 
         // create click event on mood button
         // document.getElementById("sad");
@@ -53,6 +53,8 @@ $(document).ready(function(){
         $("#sad").on("click", () => {
             // genre -> genreId
             // grab track array from response
+            var sadTracks = obj.message.body.track_list; // array of objects
+            console.log(sadTracks);
             // math.random -> array[index = random number]
             // grab track_name and artist_name from selected array[i]
         });
