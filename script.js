@@ -82,28 +82,31 @@ $(document).ready(function(){
             switch (userBtn) {
                 case document.getElementById("happy") :
                     $(".pop").append(songDiv, artDiv);
-                    
+                    var happyObj = {};
+                    happyObj["song"] = song;
+                    happyObj["artist"] = artist;
+                    happyArray.push(happyObj);
                     localStorage.setItem("happySongs", JSON.stringify(happyArray));
                     break;
                 case document.getElementById("sad") :
                     $(".emo").append(songDiv, artDiv);
-                    localStorage.setItem("sadSongs", JSON.stringify(song, artist));
+                    localStorage.setItem("sadSongs", JSON.stringify(sadArray));
                     break;
                 case document.getElementById("party") :
                     $(".hip-hop").append(songDiv, artDiv);
-                    localStorage.setItem("partySongs", JSON.stringify(song, artist));
+                    localStorage.setItem("partySongs", JSON.stringify(partyArray));
                     break;
                 case document.getElementById("study") :
                     $(".piano").append(songDiv, artDiv);
-                    localStorage.setItem("studySongs", JSON.stringify(song, artist));
+                    localStorage.setItem("studySongs", JSON.stringify(studyArray));
                     break;
                 case document.getElementById("nostalgic") :
                     $(".oldies").append(songDiv, artDiv);
-                    localStorage.setItem("nostalgicSongs", JSON.stringify(song, artist));
+                    localStorage.setItem("nostalgicSongs", JSON.stringify(nostagicArray));
                     break;
                 case document.getElementById("festive") :
                     $(".christmas").append(songDiv, artDiv);
-                    localStorage.setItem("festiveSongs", JSON.stringify(song, artist));
+                    localStorage.setItem("festiveSongs", JSON.stringify(festiveArray));
                     break;
                 default :
                     break;
@@ -111,22 +114,12 @@ $(document).ready(function(){
 
             // Put song and artist into object. Object will be put into array. Call from LocalStorage
             
-            var happyObj = {}
-            happyObj["song"] = song;
-            //console.log(happyObj);
-            happyObj["artist"] = artist;
-            //console.log(happyObj);
-            happyArray.push(happyObj);
-            //console.log(happyArray);
+            // var happyObj = {};
+            // happyObj["song"] = song;
+            // happyObj["artist"] = artist;
+            // happyArray.push(happyObj);
+       
             
-            //     var songArray = [{
-        //         song: val;
-        //         artist: val,
-                
-        //     }, {
-
-        //     }
-        // ]
             
             // .parent().append(songDiv, artDiv);
 
