@@ -44,3 +44,54 @@
     font-size: 25px;
     color: black
 }
+#about{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    color: black
+}
+#welcome{
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    color: blueviolet;
+}
+#meet-team{
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    color: blueviolet;
+    font-size: 48px
+}
+#history-text{
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 50px;
+    color: blueviolet;
+}
+#select-text{
+    font-family: 'Josefin Sans', sans-serif;
+    color: blueviolet;
+    font-size: 50px;
+}
+#happy{
+    font-family: 'Neucha', cursive;
+    font-size: 20px;
+}
+#sad{
+    font-family: 'Neucha', cursive;
+    font-size: 20px;
+}
+#party{
+    font-family: 'Neucha', cursive;
+    font-size: 20px;
+}
+#study{
+    font-family: 'Neucha', cursive;
+    font-size: 20px;
+}
+#sentimental{
+    font-family: 'Neucha', cursive;
+    font-size: 20px;
+}
+#random{
+    font-family: 'Neucha', cursive;
+    font-size: 20px;
+}

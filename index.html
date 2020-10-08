@@ -13,6 +13,9 @@
     <!-- First Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Caveat&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Neucha&family=Orbitron&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <nav class="top-bar">
@@ -32,7 +35,7 @@
                 <li class="y">c</li>
                 <li class = "emoji">🎵</li>
                 <li><a href="./index.html" id = "Home">Home 🏡</a></li>
-                <li><a href="./about.html" id = "AboutUs">About Us 📋</a></li>
+                <li><a href="./about.html" id = "AboutUs">About 📋</a></li>
                 <li><a href="./history.html" id = "MusicHistory">Music History 📜</a></li>
             </ul>
         </div>
@@ -40,29 +43,29 @@
     <br>
 
     <header>
-        <h1 style="text-align: center;">Select an Emotion for a Song!</h1>
+        <h1 style="text-align: center;" id = "select-text">🎵 Select an Emotion for a Song! 🎵</h1>
     </header>
     <br>
 
 <div class="grid-container">
     <div class="grid-y grid-margin-x">
-        <div class="cell medium-2">
-            <button class="hollow button" id="happy">Super Elated!</button>
+        <div class="pop cell medium-2">
+            <button class="hollow button" id="happy" data-genre="14">😁 Super Elated 😁</button>
         </div>
-        <div class="cell medium-2">
-            <button class="hollow button" id="sad">Not Having the Best Day :( !</button>
+        <div class="emo cell medium-2">
+            <button class="hollow button" id="sad" data-genre="100018">😢 Not Having the Best Day 😢</button>
         </div>
-        <div class="cell medium-2">
-            <button class="hollow button" id="party">Ready to Party!</button>
+        <div class="hip-hop cell medium-2">
+            <button class="hollow button" id="party" data-genre="1076">🥳 Ready to Party! 🥳</button>
         </div>
-        <div class="cell medium-2">
-            <button class="hollow button" id="study">Study/Meditation</button>
+        <div class="piano cell medium-2">
+            <button class="hollow button" id="study" data-genre="100010">🧘 Study/Meditation 🧘</button>
         </div>
-        <div class="cell medium-2">
-            <button class="hollow button" id="sentimental">In Ya Feels</button>
+        <div class="oldies cell medium-2">
+            <button class="hollow button" id="nostalgic" data-genre="1293">Nostalgic</button>
         </div>
-        <div class="cell medium-2">
-            <button class="hollow button" id="random">Im Feeling Lucky</button>
+        <div class="christmas cell medium-2">
+            <button class="hollow button" id="festive" data-genre="1080">🍀 I'm Feeling Festive 🍀</button>
         </div>
         
         

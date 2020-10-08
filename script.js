@@ -2,11 +2,22 @@
 $(document).ready(function(){
     //Declare & Define Variables
 
+    // var btns = $("button"); // array
+    //Musixmatch genre id in data-genre
+    var genreId; 
+    // for (var i=0; i<btns.length; i++){
+    //     btns[i].attr("data-genre");
+    //     console.log(btns[i].attr("data-genre"));
+    // };
+    
+    
+    $(document).on("click", "button", (e) => {
+        var userBtn = e.target;
+        var pickGenre = userBtn.getAttribute("data-genre");
+        genreId = pickGenre
+        // console.log(userBtn);
 
-    //Musixmatch
-    var genreId = "100018"
-
-    var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://api.musixmatch.com/ws/1.1/track.search?" + "f_music_genre_id="+ genreId + "&apikey=a0c16acc7fa27d7659942b310a49033d";
+        var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://api.musixmatch.com/ws/1.1/track.search?" + "f_music_genre_id="+ genreId + "&apikey=a0c16acc7fa27d7659942b310a49033d";
 
     /* 
     api is track.search
@@ -37,61 +48,78 @@ $(document).ready(function(){
         page: Define the page number for paginated results
         page_size: Define the page size for paginated results. Range is 1 to 100.
     */
+
     // AJAX call for musixmatch
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function(response){
 
-<<<<<<< HEAD
-        //gives a string
-        var obj = JSON.parse(response);
-        console.log(obj);
+        // AJAX call for musixmatch
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response){
 
-        //console.log(response);
+            // console.log(response); // gives string
+            var obj = JSON.parse(response);
+            // console.log(obj);
 
-        $('#sad').on("click", () => {
-            // mood -> genreId
-                var sadTracks = //array 
-                    response.message.body.track_list;
-                    console.log(sadTracks)
-            //grab track array from response
-                //Needed from object in API-> track_name, artist_name, track_shareURL
-            //for loop --> Math.random
-            //grab track name and artist
-        });
-=======
-        // console.log(response); // gives string
-        var obj = JSON.parse(response);
-        // console.log(obj);
+            // create click event on mood button
+                // document.getElementById("sad");
+                // document.querySelector("#sad"); // $("#sad"); // get element by id
 
-        // create click event on mood button
-            // document.getElementById("sad");
-            // document.querySelector("#sad"); // $("#sad"); // get element by id
-        $("#sad").on("click", () => {
-            // genre -> genreId
-            // grab track array from response
-            var sadTracks = obj.message.body.track_list; // array of objects
-            // console.log(sadTracks);
-            // math.random -> array[index = random number]
-                // var ran = Math.floor(Math.random()*sadTracks.length);
-                // var ranTrack = sadTracks[ran];
-            var ranTrack = sadTracks[Math.floor(Math.random()*sadTracks.length)];
-            // console.log(ranTrack);
-            // grab track_name and artist_name from selected array[i] & display in div
-            // console.log(ranTrack.track.track_name);
-            // console.log(ranTrack.track.artist_name);
+            // change to userBtn, and add conditionals for other moods
+            var tracks = obj.message.body.track_list;
+            var ranTrack = tracks[Math.floor(Math.random()*tracks.length)];
             var songDiv = $("<div>").text(ranTrack.track.track_name);
             var artDiv = $("<div>").text(ranTrack.track.artist_name);
-            $("#sad").parent().append(songDiv, artDiv);
+            
+            switch (userBtn) {
+                case document.getElementById("happy") :
+                    $(".pop").append(songDiv, artDiv);
+                    break;
+                case document.getElementById("sad") :
+                    $(".emo").append(songDiv, artDiv);
+                    break;
+                case document.getElementById("party") :
+                    $(".hip-hop").append(songDiv, artDiv);
+                    break;
+                case document.getElementById("study") :
+                    $(".piano").append(songDiv, artDiv);
+                    break;
+                case document.getElementById("nostalgic") :
+                    $(".oldies").append(songDiv, artDiv);
+                    break;
+                case document.getElementById("festive") :
+                    $(".christmas").append(songDiv, artDiv);
+                    break;
+                default :
+                    break;
+            };
+            
+            // .parent().append(songDiv, artDiv);
+
+            // $("#sad").on("click", () => {
+            //     // genre -> genreId
+            //     // grab track array from response
+            //     var sadTracks = obj.message.body.track_list; // array of objects
+            //     // console.log(sadTracks);
+            //     // math.random -> array[index = random number]
+            //         // var ran = Math.floor(Math.random()*sadTracks.length);
+            //         // var ranTrack = sadTracks[ran];
+            //     var ranTrack = sadTracks[Math.floor(Math.random()*sadTracks.length)];
+            //     // console.log(ranTrack);
+            //     // grab track_name and artist_name from selected array[i] & display in div
+            //     // console.log(ranTrack.track.track_name);
+            //     // console.log(ranTrack.track.artist_name);
+            //     var songDiv = $("<div>").text(ranTrack.track.track_name);
+            //     var artDiv = $("<div>").text(ranTrack.track.artist_name);
+            //     $("#sad").parent().append(songDiv, artDiv);
+            // });
+
+
+
+
+
         });
-
-
->>>>>>> main
-
-
     });
-
 
     // FavQs
     var favQsURL = "https://cors-anywhere.herokuapp.com/" + "https://favqs.com/api/" + "quotes"
