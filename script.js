@@ -98,18 +98,34 @@ $(document).ready(function(){
                     break;
                 case document.getElementById("party") :
                     $(".hip-hop").append(songDiv, artDiv);
+                    var partyObj = {};
+                    partyObj["song"] = song;
+                    partyObj["artist"] = artist;
+                    partyArray.push(partyObj);
                     localStorage.setItem("partySongs", JSON.stringify(partyArray));
                     break;
                 case document.getElementById("study") :
                     $(".piano").append(songDiv, artDiv);
+                    var studyObj = {};
+                    studyObj["song"] = song;
+                    studyObj["artist"] = artist;
+                    studyArray.push(studyObj);
                     localStorage.setItem("studySongs", JSON.stringify(studyArray));
                     break;
                 case document.getElementById("nostalgic") :
                     $(".oldies").append(songDiv, artDiv);
+                    var nostalgicObj = {};
+                    nostalgicObj["song"] = song;
+                    nostalgicObj["artist"] = artist;
+                    nostalgicArray.push(nostalgicObj);
                     localStorage.setItem("nostalgicSongs", JSON.stringify(nostagicArray));
                     break;
                 case document.getElementById("festive") :
                     $(".christmas").append(songDiv, artDiv);
+                    var festiveObj = {};
+                    festiveObj["song"] = song;
+                    festiveObj["artist"] = artist;
+                    festiveArray.push(festiveObj);
                     localStorage.setItem("festiveSongs", JSON.stringify(festiveArray));
                     break;
                 default :
