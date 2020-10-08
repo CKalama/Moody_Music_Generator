@@ -11,21 +11,12 @@ $(document).ready(function(){
     // };
     
     var happyArray =[];
-    // var array = [
-    //     [
-    //         {
-    //             song:
-    //             artist:
-    //         }
-    //     ],
-    //     [
-    //         {
-    //             song:
-    //             artist:
-    //         }
-    //     ],
-        
-    // ];
+    var sadArray = [];
+    var partyArray = [];
+    var studyArray = [];
+    var nostagicArray = [];
+    var festiveArray = [];
+
     $(document).on("click", "button", (e) => {
         var userBtn = e.target;
         var pickGenre = userBtn.getAttribute("data-genre");
