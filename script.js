@@ -10,7 +10,22 @@ $(document).ready(function(){
     //     console.log(btns[i].attr("data-genre"));
     // };
     
-    
+    var happyArray =[];
+    // var array = [
+    //     [
+    //         {
+    //             song:
+    //             artist:
+    //         }
+    //     ],
+    //     [
+    //         {
+    //             song:
+    //             artist:
+    //         }
+    //     ],
+        
+    // ];
     $(document).on("click", "button", (e) => {
         var userBtn = e.target;
         var pickGenre = userBtn.getAttribute("data-genre");
@@ -76,8 +91,8 @@ $(document).ready(function(){
             switch (userBtn) {
                 case document.getElementById("happy") :
                     $(".pop").append(songDiv, artDiv);
-
-                    localStorage.setItem("happySongs", JSON.stringify(song, artist));
+                    
+                    localStorage.setItem("happySongs", JSON.stringify(happyArray));
                     break;
                 case document.getElementById("sad") :
                     $(".emo").append(songDiv, artDiv);
@@ -102,6 +117,25 @@ $(document).ready(function(){
                 default :
                     break;
             };
+
+            // Put song and artist into object. Object will be put into array. Call from LocalStorage
+            
+            var happyObj = {}
+            happyObj["song"] = song;
+            //console.log(happyObj);
+            happyObj["artist"] = artist;
+            //console.log(happyObj);
+            happyArray.push(happyObj);
+            //console.log(happyArray);
+            
+            //     var songArray = [{
+        //         song: val;
+        //         artist: val,
+                
+        //     }, {
+
+        //     }
+        // ]
             
             // .parent().append(songDiv, artDiv);
 
