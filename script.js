@@ -6,7 +6,7 @@ $(document).ready(function(){
     //Musixmatch
     var genreId = "100018"
 
-    var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://api.musixmatch.com/ws/1.1/track.search?" + "f_music_genre_id="+ "genreId" + "&apikey=a0c16acc7fa27d7659942b310a49033d";
+    var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://api.musixmatch.com/ws/1.1/track.search?" + "f_music_genre_id="+ genreId + "&apikey=a0c16acc7fa27d7659942b310a49033d";
 
     /* 
     api is track.search
@@ -43,6 +43,7 @@ $(document).ready(function(){
         method: "GET"
     }).then(function(response){
 
+<<<<<<< HEAD
         //gives a string
         var obj = JSON.parse(response);
         console.log(obj);
@@ -59,6 +60,25 @@ $(document).ready(function(){
             //for loop --> Math.random
             //grab track name and artist
         });
+=======
+        // console.log(response); // gives string
+        var obj = JSON.parse(response);
+        // console.log(obj);
+
+        // create click event on mood button
+        // document.getElementById("sad");
+        // document.querySelector("#sad"); // $("#sad"); // get element by id
+        $("#sad").on("click", () => {
+            // genre -> genreId
+            // grab track array from response
+            var sadTracks = obj.message.body.track_list; // array of objects
+            console.log(sadTracks);
+            // math.random -> array[index = random number]
+            // grab track_name and artist_name from selected array[i]
+        });
+
+
+>>>>>>> main
 
 
     });
