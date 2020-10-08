@@ -47,8 +47,22 @@
 #about{
     font-family: 'Josefin Sans', sans-serif;
     font-size: 20px;
+    color: black
 }
 #welcome{
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
+    color: fuchsia
+}
+#meet-team{
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    color: fuchsia;
+    font-size: 48px
+}
+#history-text{
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 50px;
+    color: fuchsia
 }
