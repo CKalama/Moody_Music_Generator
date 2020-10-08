@@ -11,21 +11,12 @@ $(document).ready(function(){
     // };
     
     var happyArray =[];
-    // var array = [
-    //     [
-    //         {
-    //             song:
-    //             artist:
-    //         }
-    //     ],
-    //     [
-    //         {
-    //             song:
-    //             artist:
-    //         }
-    //     ],
-        
-    // ];
+    var sadArray = [];
+    var partyArray = [];
+    var studyArray = [];
+    var nostalgicArray = [];
+    var festiveArray = [];
+
     $(document).on("click", "button", (e) => {
         var userBtn = e.target;
         var pickGenre = userBtn.getAttribute("data-genre");
@@ -91,28 +82,51 @@ $(document).ready(function(){
             switch (userBtn) {
                 case document.getElementById("happy") :
                     $(".pop").append(songDiv, artDiv);
-                    
+                    var happyObj = {};
+                    happyObj["song"] = song;
+                    happyObj["artist"] = artist;
+                    happyArray.push(happyObj);
                     localStorage.setItem("happySongs", JSON.stringify(happyArray));
                     break;
                 case document.getElementById("sad") :
                     $(".emo").append(songDiv, artDiv);
-                    localStorage.setItem("sadSongs", JSON.stringify(song, artist));
+                    var sadObj = {};
+                    sadObj["song"] = song;
+                    sadObj["artist"] = artist;
+                    sadArray.push(sadObj);
+                    localStorage.setItem("sadSongs", JSON.stringify(sadArray));
                     break;
                 case document.getElementById("party") :
                     $(".hip-hop").append(songDiv, artDiv);
-                    localStorage.setItem("partySongs", JSON.stringify(song, artist));
+                    var partyObj = {};
+                    partyObj["song"] = song;
+                    partyObj["artist"] = artist;
+                    partyArray.push(partyObj);
+                    localStorage.setItem("partySongs", JSON.stringify(partyArray));
                     break;
                 case document.getElementById("study") :
                     $(".piano").append(songDiv, artDiv);
-                    localStorage.setItem("studySongs", JSON.stringify(song, artist));
+                    var studyObj = {};
+                    studyObj["song"] = song;
+                    studyObj["artist"] = artist;
+                    studyArray.push(studyObj);
+                    localStorage.setItem("studySongs", JSON.stringify(studyArray));
                     break;
                 case document.getElementById("nostalgic") :
                     $(".oldies").append(songDiv, artDiv);
-                    localStorage.setItem("nostalgicSongs", JSON.stringify(song, artist));
+                    var nostalgicObj = {};
+                    nostalgicObj["song"] = song;
+                    nostalgicObj["artist"] = artist;
+                    nostalgicArray.push(nostalgicObj);
+                    localStorage.setItem("nostalgicSongs", JSON.stringify(nostalgicArray));
                     break;
                 case document.getElementById("festive") :
                     $(".christmas").append(songDiv, artDiv);
-                    localStorage.setItem("festiveSongs", JSON.stringify(song, artist));
+                    var festiveObj = {};
+                    festiveObj["song"] = song;
+                    festiveObj["artist"] = artist;
+                    festiveArray.push(festiveObj);
+                    localStorage.setItem("festiveSongs", JSON.stringify(festiveArray));
                     break;
                 default :
                     break;
@@ -120,22 +134,12 @@ $(document).ready(function(){
 
             // Put song and artist into object. Object will be put into array. Call from LocalStorage
             
-            var happyObj = {}
-            happyObj["song"] = song;
-            //console.log(happyObj);
-            happyObj["artist"] = artist;
-            //console.log(happyObj);
-            happyArray.push(happyObj);
-            //console.log(happyArray);
+            // var happyObj = {};
+            // happyObj["song"] = song;
+            // happyObj["artist"] = artist;
+            // happyArray.push(happyObj);
+       
             
-            //     var songArray = [{
-        //         song: val;
-        //         artist: val,
-                
-        //     }, {
-
-        //     }
-        // ]
             
             // .parent().append(songDiv, artDiv);
 
