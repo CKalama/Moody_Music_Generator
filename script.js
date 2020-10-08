@@ -59,8 +59,13 @@ $(document).ready(function(){
                 // var ran = Math.floor(Math.random()*sadTracks.length);
                 // var ranTrack = sadTracks[ran];
             var ranTrack = sadTracks[Math.floor(Math.random()*sadTracks.length)];
-            console.log(ranTrack);
-            // grab track_name and artist_name from selected array[i]
+            // console.log(ranTrack);
+            // grab track_name and artist_name from selected array[i] & display in div
+            // console.log(ranTrack.track.track_name);
+            // console.log(ranTrack.track.artist_name);
+            var songDiv = $("<div>").text(ranTrack.track.track_name);
+            var artDiv = $("<div>").text(ranTrack.track.artist_name);
+            $("#sad").parent().append(songDiv, artDiv);
         });
 
 
