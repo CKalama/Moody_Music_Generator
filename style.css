@@ -6,21 +6,41 @@
 
 .m{
     font-family: 'Sansita Swashed', cursive;
-    color: red
+    color: red;
+    font-size: 25px
 }
 .o{
     font-family: 'Sansita Swashed', cursive;
-    color: blue
+    color: blue;
+    font-size: 25px;
 }
 .o2{
     font-family: 'Sansita Swashed', cursive;
-    color: green
+    color: green;
+    font-size: 25px;
 }
 .d{
     font-family: 'Sansita Swashed', cursive;
-    color: orange
+    color: orange;
+    font-size: 25px;
 }
 .y{
     font-family: 'Sansita Swashed', cursive;
-    color: pink;
+    color: rgb(209, 192, 255);
+    font-size: 25px;
+}
+#Home{
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+    color: black
+}
+#AboutUs{
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+    color: black
+}
+#MusicHistory{
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+    color: black
 }
