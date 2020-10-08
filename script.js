@@ -14,7 +14,7 @@ $(document).ready(function(){
     var sadArray = [];
     var partyArray = [];
     var studyArray = [];
-    var nostagicArray = [];
+    var nostalgicArray = [];
     var festiveArray = [];
 
     $(document).on("click", "button", (e) => {
@@ -118,7 +118,7 @@ $(document).ready(function(){
                     nostalgicObj["song"] = song;
                     nostalgicObj["artist"] = artist;
                     nostalgicArray.push(nostalgicObj);
-                    localStorage.setItem("nostalgicSongs", JSON.stringify(nostagicArray));
+                    localStorage.setItem("nostalgicSongs", JSON.stringify(nostalgicArray));
                     break;
                 case document.getElementById("festive") :
                     $(".christmas").append(songDiv, artDiv);
