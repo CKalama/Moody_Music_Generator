@@ -90,6 +90,10 @@ $(document).ready(function(){
                     break;
                 case document.getElementById("sad") :
                     $(".emo").append(songDiv, artDiv);
+                    var sadObj = {};
+                    sadObj["song"] = song;
+                    sadObj["artist"] = artist;
+                    sadArray.push(sadObj);
                     localStorage.setItem("sadSongs", JSON.stringify(sadArray));
                     break;
                 case document.getElementById("party") :
