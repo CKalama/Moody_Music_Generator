@@ -68,27 +68,36 @@ $(document).ready(function(){
             // change to userBtn, and add conditionals for other moods
             var tracks = obj.message.body.track_list;
             var ranTrack = tracks[Math.floor(Math.random()*tracks.length)];
-            var songDiv = $("<div>").text(ranTrack.track.track_name);
-            var artDiv = $("<div>").text(ranTrack.track.artist_name);
+            var song = ranTrack.track.track_name;
+            var artist = ranTrack.track.artist_name;
+            var songDiv = $("<div>").text(song);
+            var artDiv = $("<div>").text(artist);
             
             switch (userBtn) {
                 case document.getElementById("happy") :
                     $(".pop").append(songDiv, artDiv);
+
+                    localStorage.setItem("happySongs", JSON.stringify(song, artist));
                     break;
                 case document.getElementById("sad") :
                     $(".emo").append(songDiv, artDiv);
+                    localStorage.setItem("sadSongs", JSON.stringify(song, artist));
                     break;
                 case document.getElementById("party") :
                     $(".hip-hop").append(songDiv, artDiv);
+                    localStorage.setItem("partySongs", JSON.stringify(song, artist));
                     break;
                 case document.getElementById("study") :
                     $(".piano").append(songDiv, artDiv);
+                    localStorage.setItem("studySongs", JSON.stringify(song, artist));
                     break;
                 case document.getElementById("nostalgic") :
                     $(".oldies").append(songDiv, artDiv);
+                    localStorage.setItem("nostalgicSongs", JSON.stringify(song, artist));
                     break;
                 case document.getElementById("festive") :
                     $(".christmas").append(songDiv, artDiv);
+                    localStorage.setItem("festiveSongs", JSON.stringify(song, artist));
                     break;
                 default :
                     break;
@@ -121,24 +130,16 @@ $(document).ready(function(){
         });
     });
 
-    // FavQs
-    var favQsURL = "https://cors-anywhere.herokuapp.com/" + "https://favqs.com/api/" + "quotes"
-
-    // AJAX call for FavQs
-    $.ajax({
-        url: favQsURL,
-        method: "GET",
-        headers: {
-            authorization: 
-            "Token token=19fc73e5352d2abf14a4264b58512ba9"}
-    }).then(function(res){
-
-        // console.log(res);
-
-
-
-    });
-
+    
+    //Setting up Saving an item to Local Storage
+//     $(document).ready(function() {
+//              $(".button").on("click", function(){
+//         var musicSave = $(this).parent().attr("data-genre");
+//         var textSave= $(this).siblings("songDiv, artDiv").val();
+//         localStorage.setItem(musicSave, textSave);
+        
+//     })
+// });
 
 
 
