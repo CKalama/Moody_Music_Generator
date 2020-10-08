@@ -61,6 +61,8 @@ $(document).ready(function(){
             // create click event on mood button
                 // document.getElementById("sad");
                 // document.querySelector("#sad"); // $("#sad"); // get element by id
+
+            // change to userBtn, and add conditionals for other moods
             $("#sad").on("click", () => {
                 // genre -> genreId
                 // grab track array from response
