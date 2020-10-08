@@ -1,14 +1,26 @@
 //Script for the about.html page
 
-// object.onmouseover = function(){};
 
-// object.addEventListener("mouseover", myScript);
+$('#justinImage img').hover(function() {
+    $(this).attr('src', 'Assets/justin2.jpg');
+  }, function() {
+    $(this).attr('src', 'Assets/LI-Photo.png');
+  });
 
-// var overFunction = 
+//   $('#chrisImage img').hover(function() {
+//     $(this).attr('src', 'Assets/justin2.jpg');
+//   }, function() {
+//     $(this).attr('src', 'Assets/LI-Photo.png');
+//   });
 
-{/* <div onmouseover="myOverFunction()">
-  <p>onmouseover: <br> <span id="demo3">Mouse over me!</span></p>
-</div>
+//   $('#agnesImage img').hover(function() {
+//     $(this).attr('src', 'Assets/justin2.jpg');
+//   }, function() {
+//     $(this).attr('src', 'Assets/LI-Photo.png');
+//   });
 
-function myMoveFunction() {
-    document.getElementById("demo").innerHTML = z+=1; */}
+//   $('#benImage img').hover(function() {
+//     $(this).attr('src', 'Assets/justin2.jpg');
+//   }, function() {
+//     $(this).attr('src', 'Assets/LI-Photo.png');
+//   });
