@@ -3,3 +3,24 @@
 .mood-buttons {
     text-align: center
 }
+
+.m{
+    font-family: 'Sansita Swashed', cursive;
+    color: red
+}
+.o{
+    font-family: 'Sansita Swashed', cursive;
+    color: blue
+}
+.o2{
+    font-family: 'Sansita Swashed', cursive;
+    color: green
+}
+.d{
+    font-family: 'Sansita Swashed', cursive;
+    color: orange
+}
+.y{
+    font-family: 'Sansita Swashed', cursive;
+    color: pink;
+}
