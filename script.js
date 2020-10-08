@@ -48,15 +48,24 @@ $(document).ready(function(){
         // console.log(obj);
 
         // create click event on mood button
-        // document.getElementById("sad");
-        // document.querySelector("#sad"); // $("#sad"); // get element by id
+            // document.getElementById("sad");
+            // document.querySelector("#sad"); // $("#sad"); // get element by id
         $("#sad").on("click", () => {
             // genre -> genreId
             // grab track array from response
             var sadTracks = obj.message.body.track_list; // array of objects
-            console.log(sadTracks);
+            // console.log(sadTracks);
             // math.random -> array[index = random number]
-            // grab track_name and artist_name from selected array[i]
+                // var ran = Math.floor(Math.random()*sadTracks.length);
+                // var ranTrack = sadTracks[ran];
+            var ranTrack = sadTracks[Math.floor(Math.random()*sadTracks.length)];
+            // console.log(ranTrack);
+            // grab track_name and artist_name from selected array[i] & display in div
+            // console.log(ranTrack.track.track_name);
+            // console.log(ranTrack.track.artist_name);
+            var songDiv = $("<div>").text(ranTrack.track.track_name);
+            var artDiv = $("<div>").text(ranTrack.track.artist_name);
+            $("#sad").parent().append(songDiv, artDiv);
         });
 
 
