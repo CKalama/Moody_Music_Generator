@@ -103,49 +103,24 @@ $(document).ready(function(){
                     switchCall(".pop", happyObj, "Happy", happyArray, "happySongs");
                     break;
                 case document.getElementById("sad") :
-                    $(".emo").append(songDiv, artDiv);
                     var sadObj = {};
-                    sadObj["mood"] = "Sad"
-                    sadObj["song"] = song;
-                    sadObj["artist"] = artist;
-                    sadArray.push(sadObj);
-                    localStorage.setItem("sadSongs", JSON.stringify(sadArray));
+                    switchCall(".emo", sadObj, "Sad", sadArray, "sadSongs");
                     break;
                 case document.getElementById("party") :
-                    $(".hip-hop").append(songDiv, artDiv);
                     var partyObj = {};
-                    partyObj["mood"] = "Ready to Party"
-                    partyObj["song"] = song;
-                    partyObj["artist"] = artist;
-                    partyArray.push(partyObj);
-                    localStorage.setItem("partySongs", JSON.stringify(partyArray));
+                    switchCall(".hip-hop", partyObj, "Party", partyArray, "partySongs");
                     break;
                 case document.getElementById("study") :
-                    $(".piano").append(songDiv, artDiv);
                     var studyObj = {};
-                    studyObj["mood"] = "Zen"
-                    studyObj["song"] = song;
-                    studyObj["artist"] = artist;
-                    studyArray.push(studyObj);
-                    localStorage.setItem("studySongs", JSON.stringify(studyArray));
+                    switchCall(".piano", studyObj, "Zen", studyArray, "studySongs");
                     break;
                 case document.getElementById("nostalgic") :
-                    $(".oldies").append(songDiv, artDiv);
                     var nostalgicObj = {};
-                    nostalgicObj["mood"] = "Nostalgic"
-                    nostalgicObj["song"] = song;
-                    nostalgicObj["artist"] = artist;
-                    nostalgicArray.push(nostalgicObj);
-                    localStorage.setItem("nostalgicSongs", JSON.stringify(nostalgicArray));
+                    switchCall(".oldies", nostalgicObj, "Nostalgic", nostalgicArray, "nostalgicSongs");
                     break;
                 case document.getElementById("festive") :
-                    $(".christmas").append(songDiv, artDiv);
                     var festiveObj = {};
-                    festiveObj["mood"] = "Festive"
-                    festiveObj["song"] = song;
-                    festiveObj["artist"] = artist;
-                    festiveArray.push(festiveObj);
-                    localStorage.setItem("festiveSongs", JSON.stringify(festiveArray));
+                    switchCall(".christmas", festiveObj, "Festive", festiveArray, "festiveSongs");
                     break;
                 default :
                     break;
