@@ -169,27 +169,22 @@ $(document).ready(function(){
     });
     //This gets an ARRAY OF OBJECTS
     var getHappy = JSON.parse(localStorage.getItem("happySongs"))
-    for (var i=0; i<getHappy.length;i++) {
-        var happyRet= getHappy[i]//Gives us an Object in the Array
-        //console.log(y);
+    function retHappy(index){
+        var happyRet= getHappy[index] //Gives us an Object in the Array
         happyRet.song;
         happyRet.artist;
-        //console.log(y.song);
-        //console.log(y.artist);
-    
+        var entry = $("<tr>")
+        var entryMood = $("<td>").text("Mood")
+        var entrySong = $("<td>").text(happyRet.song);
+        var entryArtist = $("<td>").text(happyRet.artist);
+        entry.append(entryMood, entrySong, entryArtist);
+        $("tbody").prepend(entry);
+    };
+    for (var i=0; i<getHappy.length; i++){
+        retHappy(i);
     }
-    //console.log(x);
     
-   var entry = $("<tr>")
-   var entryMood = $("<td>").text("Mood")
-   var entrySong = $("<td>").text(happyRet.song);
-   var entryArtist = $("<td>").text(happyRet.artist);
-   entry.append(entryMood, entrySong, entryArtist);
-   $("tbody").prepend(entry);
-   //$(includeEntrySong).text();
    
-
-   //$(songEntry).text(x);
 
 
 
