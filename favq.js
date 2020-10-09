@@ -24,7 +24,7 @@ $(document).on("click", "button", (e) => {
     //var quoteObj = JSON.parse(res);
     // console.log(res);
     // console.log(quoteObj);
-
+    $("footer").empty();
     var userQuotes = res.quotes; //this is an array
     // console.log(userQuotes);
     var ranQuote = userQuotes[Math.floor(Math.random()*userQuotes.length)];
@@ -32,9 +32,9 @@ $(document).on("click", "button", (e) => {
     var selectedQuote = ranQuote.body;
     var author = ranQuote.author;
     var selectedQuoteDiv = $("<div>").text(selectedQuote);
-    var authorDiv = $("<div>").text(author);
+    var authorDiv = $("<div>").text("-"+ author);
 // console.log(selectedQuote,author);
-
+$("footer").append(selectedQuoteDiv, authorDiv);
     // switch (userBtn) {
     //     case document.getElementById("sad") :
     //                 $(".emo").append(selectedQuoteDiv, authorDiv);
