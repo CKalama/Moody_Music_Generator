@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Caveat&family=Patrick+Hand&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 </head>
-<body class = "body">
+<body>
 
     <nav class="top-bar">
         <div class="top-bar-left">
@@ -42,23 +42,21 @@
     <header>
         <h1 id = "history-text">📜 Your History 📜</h1>
     </header>
-
-    <div class="container">
-        <!-- This is where the list of all the past searches will go -->
-        <table id="history">
-            <thead>
+    
+    <!-- This is where the list of all the past searches will go -->
+    <table class="grid-container" id="history">
+        <thead>
             <tr>
                 <th scope="col">Mood</th>
                 <th scope="col">Song</th>
                 <th scope="col">Artist</th>
             </tr>
-            </thead>
-            <tbody>
-                <!-- Each entry will be a <tr> -->
-                    <!-- Each entry's mood, song, and artist will be in <td> tags nested in <tr> -->
-            </tbody>
-        </table>
-    </div>
+        </thead>
+        <tbody>
+            <!-- Each entry will be a <tr> -->
+            <!-- Each entry's mood, song, and artist will be in <td> tags nested in <tr> -->
+        </tbody>
+    </table>
 
     <footer>
     </footer>    
