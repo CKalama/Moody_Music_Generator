@@ -1,47 +1,47 @@
+body {
+    background-color: #fff2f9;
+}
+
 
 /* Mood Buttons Styling for index.html */
 .mood-buttons {
     text-align: center
 }
 
+nav {
+    font-size: 25px;
+}
+
 .m{
     font-family: 'Sansita Swashed', cursive;
     color: red;
-    font-size: 25px
 }
 .o{
     font-family: 'Sansita Swashed', cursive;
     color: blue;
-    font-size: 25px;
 }
 .o2{
     font-family: 'Sansita Swashed', cursive;
     color: green;
-    font-size: 25px;
 }
 .d{
     font-family: 'Sansita Swashed', cursive;
     color: orange;
-    font-size: 25px;
 }
 .y{
     font-family: 'Sansita Swashed', cursive;
     color: rgb(209, 192, 255);
-    font-size: 25px;
 }
 #Home{
     font-family: 'Caveat', cursive;
-    font-size: 25px;
     color: black
 }
 #AboutUs{
     font-family: 'Caveat', cursive;
-    font-size: 25px;
     color: black
 }
 #MusicHistory{
     font-family: 'Caveat', cursive;
-    font-size: 25px;
     color: black
 }
 #about{
@@ -114,8 +114,10 @@
     background-color: rgb(0, 217, 255);
     margin-right: 75px;
 }
-.body{
-    background-color: pink;
+
+#history {
+    margin: auto;
+    width: 90%;
 }
 
 
