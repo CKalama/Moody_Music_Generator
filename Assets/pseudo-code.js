@@ -1,5 +1,5 @@
 //PSEUDO CODE FOR MOODY MUSIC SCRIPT
-
+// https://devhints.io/moment
 // HOME PAGE
 // User perspective: user clicks mood button
     // click event on button --> displays response (.append())
@@ -40,7 +40,18 @@
         */
             // object name = genre; each key = genreName: response.track.get (or something),
         // take genre to find a song that fits into that genre using ajax call (musixmatch music.track.get)
+    // SWITCH - wet code
+        // $(".pop").append(songDiv, artDiv);
+        // var happyObj = {};
+        // happyObj["mood"] = "Happy"
+        // happyObj["song"] = song;
+        // happyObj["artist"] = artist;
+        // happyArray.push(happyObj);
+        // localStorage.setItem("happySongs", JSON.stringify(happyArray));
+
+
     // when same button pressed, new song will overwrite (.text()) old response
+        // used replaceWith() -- https://api.jquery.com/replacewith/
     // when button pressed, response will be stored to local storage
         // setItem, getItem, etc.
     // display inspirational quote when button clicked
