@@ -19,7 +19,7 @@ Users can click each button depending on their mood to receive a song recomendat
 Credits:
 
 Chris Kalama (github profile: https://github.com/ckalama)
-Agnes Chueng (github profile:  https://github.com/achueng)
+Agnes Chueng (github profile: https://github.com/achueng)
 Juston Yocus (github profile: https://github.com/jyocus)
 Ben Resnicoff (github profile: https://github.com/benres2008)
 
