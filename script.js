@@ -1,3 +1,5 @@
+
+
 // Load Javascript after HTML finished loading
 $(document).ready(function(){
     //Declare & Define Variables
@@ -92,7 +94,7 @@ $(document).ready(function(){
                     happyObj["song"] = song;
                     happyObj["artist"] = artist;
                     happyArray.push(happyObj);
-                    localStorage.setItem("happySongs", JSON.stringify(happyArray));               
+                    localStorage.setItem("happySongs", JSON.stringify(happyArray));
                     break;
                 case document.getElementById("sad") :
                     $(".emo").append(songDiv, artDiv);
