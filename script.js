@@ -87,18 +87,25 @@ $(document).ready(function(){
             $(".song-div").replaceWith(songDiv);
             $(".art-div").replaceWith(artDiv);
 
+            // moodClass - "._____", mood - "____", moodSongs - "____Songs"
+            function switchCall(moodClass, moodObj, mood, moodArray, moodSongs) {
+                $(moodClass).append(songDiv, artDiv)
+                moodObj["mood"] = mood;
+                moodObj["song"] = song;
+                moodObj["artist"] = artist;
+                moodArray.push(moodObj);
+                localStorage.setItem(moodSongs, JSON.stringify(moodArray));
+            };
+
             switch (userBtn) {
-                case document.getElementById("happy"):{
-                    $(".pop").append(songDiv, artDiv)}
+                case document.getElementById("happy"):
                     var happyObj = {};
-                    happyObj["song"] = song;
-                    happyObj["artist"] = artist;
-                    happyArray.push(happyObj);
-                    localStorage.setItem("happySongs", JSON.stringify(happyArray));
+                    switchCall(".pop", happyObj, "Happy", happyArray, "happySongs");
                     break;
                 case document.getElementById("sad") :
                     $(".emo").append(songDiv, artDiv);
                     var sadObj = {};
+                    sadObj["mood"] = "Sad"
                     sadObj["song"] = song;
                     sadObj["artist"] = artist;
                     sadArray.push(sadObj);
@@ -107,6 +114,7 @@ $(document).ready(function(){
                 case document.getElementById("party") :
                     $(".hip-hop").append(songDiv, artDiv);
                     var partyObj = {};
+                    partyObj["mood"] = "Ready to Party"
                     partyObj["song"] = song;
                     partyObj["artist"] = artist;
                     partyArray.push(partyObj);
@@ -115,6 +123,7 @@ $(document).ready(function(){
                 case document.getElementById("study") :
                     $(".piano").append(songDiv, artDiv);
                     var studyObj = {};
+                    studyObj["mood"] = "Zen"
                     studyObj["song"] = song;
                     studyObj["artist"] = artist;
                     studyArray.push(studyObj);
@@ -123,6 +132,7 @@ $(document).ready(function(){
                 case document.getElementById("nostalgic") :
                     $(".oldies").append(songDiv, artDiv);
                     var nostalgicObj = {};
+                    nostalgicObj["mood"] = "Nostalgic"
                     nostalgicObj["song"] = song;
                     nostalgicObj["artist"] = artist;
                     nostalgicArray.push(nostalgicObj);
@@ -131,6 +141,7 @@ $(document).ready(function(){
                 case document.getElementById("festive") :
                     $(".christmas").append(songDiv, artDiv);
                     var festiveObj = {};
+                    festiveObj["mood"] = "Festive"
                     festiveObj["song"] = song;
                     festiveObj["artist"] = artist;
                     festiveArray.push(festiveObj);
@@ -140,43 +151,16 @@ $(document).ready(function(){
                     break;
             };
 
-           
-
-            //Getting setItem to display onto History Screen
-            //     Localstorage.getItem
-            //     var x = JSON.parse(happyArray[1])
-            // localStorage.getItem("happySongs");
-            //     console.log(x);
-
-
-
-
-
-
-
-
         });
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
     
     });
     //This gets an ARRAY OF OBJECTS
-    var getHappy = JSON.parse(localStorage.getItem("happySongs"))
+    var getHappy = JSON.parse(localStorage.getItem("happySongs"));
+
     function retHappy(index){
         var happyRet= getHappy[index] //Gives us an Object in the Array
-        happyRet.song;
-        happyRet.artist;
         var entry = $("<tr>")
-        var entryMood = $("<td>").text("Mood")
+        var entryMood = $("<td>").text(happyRet.mood)
         var entrySong = $("<td>").text(happyRet.song);
         var entryArtist = $("<td>").text(happyRet.artist);
         entry.append(entryMood, entrySong, entryArtist);
