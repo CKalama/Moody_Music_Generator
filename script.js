@@ -80,8 +80,8 @@ $(document).ready(function(){
             var artDiv = $("<div>").text(artist);
             
             switch (userBtn) {
-                case document.getElementById("happy") :
-                    $(".pop").append(songDiv, artDiv);
+                case document.getElementById("happy"):{
+                    $(".pop").append(songDiv, artDiv)}
                     var happyObj = {};
                     happyObj["song"] = song;
                     happyObj["artist"] = artist;
