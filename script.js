@@ -76,8 +76,12 @@ $(document).ready(function(){
             var ranTrack = tracks[Math.floor(Math.random()*tracks.length)];
             var song = ranTrack.track.track_name;
             var artist = ranTrack.track.artist_name;
-            var songDiv = $("<div>").text(song);
-            var artDiv = $("<div>").text(artist);
+            var songDiv = $("<div>");
+            var artDiv = $("<div>");
+            songDiv.addClass("cell medium-3");
+            artDiv.addClass("cell medium-3");
+            songDiv.text(song);
+            artDiv.text(artist);
             
             switch (userBtn) {
                 case document.getElementById("happy"):{
