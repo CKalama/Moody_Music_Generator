@@ -1,3 +1,5 @@
+
+
 // Load Javascript after HTML finished loading
 $(document).ready(function(){
     //Declare & Define Variables
@@ -17,6 +19,13 @@ $(document).ready(function(){
     var nostalgicArray = [];
     var festiveArray = [];
 
+    getHistory("happySongs");
+    getHistory("sadSongs");
+    getHistory("partySongs");
+    getHistory("studySongs");
+    getHistory("nostalgicSongs");
+    getHistory("festiveSongs");
+    
     $(document).on("click", "button", (e) => {
         var userBtn = e.target;
         var pickGenre = userBtn.getAttribute("data-genre");
@@ -85,111 +94,68 @@ $(document).ready(function(){
             $(".song-div").replaceWith(songDiv);
             $(".art-div").replaceWith(artDiv);
 
+            // moodClass - "._____", mood - "____", moodSongs - "____Songs"
+            function switchCall(moodClass, moodObj, mood, moodArray, moodSongs) {
+                $(moodClass).append(songDiv, artDiv)
+                moodObj["mood"] = mood;
+                moodObj["song"] = song;
+                moodObj["artist"] = artist;
+                moodArray.push(moodObj);
+                localStorage.setItem(moodSongs, JSON.stringify(moodArray));
+            };
+
             switch (userBtn) {
-                case document.getElementById("happy"):{
-                    $(".pop").append(songDiv, artDiv)}
+                case document.getElementById("happy"):
                     var happyObj = {};
-                    happyObj["song"] = song;
-                    happyObj["artist"] = artist;
-                    happyArray.push(happyObj);
-                    localStorage.setItem("happySongs", JSON.stringify(happyArray));               
+                    switchCall(".pop", happyObj, "Happy", happyArray, "happySongs");
                     break;
                 case document.getElementById("sad") :
-                    $(".emo").append(songDiv, artDiv);
                     var sadObj = {};
-                    sadObj["song"] = song;
-                    sadObj["artist"] = artist;
-                    sadArray.push(sadObj);
-                    localStorage.setItem("sadSongs", JSON.stringify(sadArray));
+                    switchCall(".emo", sadObj, "Sad", sadArray, "sadSongs");
                     break;
                 case document.getElementById("party") :
-                    $(".hip-hop").append(songDiv, artDiv);
                     var partyObj = {};
-                    partyObj["song"] = song;
-                    partyObj["artist"] = artist;
-                    partyArray.push(partyObj);
-                    localStorage.setItem("partySongs", JSON.stringify(partyArray));
+                    switchCall(".hip-hop", partyObj, "Party", partyArray, "partySongs");
                     break;
                 case document.getElementById("study") :
-                    $(".piano").append(songDiv, artDiv);
                     var studyObj = {};
-                    studyObj["song"] = song;
-                    studyObj["artist"] = artist;
-                    studyArray.push(studyObj);
-                    localStorage.setItem("studySongs", JSON.stringify(studyArray));
+                    switchCall(".piano", studyObj, "Zen", studyArray, "studySongs");
                     break;
                 case document.getElementById("nostalgic") :
-                    $(".oldies").append(songDiv, artDiv);
                     var nostalgicObj = {};
-                    nostalgicObj["song"] = song;
-                    nostalgicObj["artist"] = artist;
-                    nostalgicArray.push(nostalgicObj);
-                    localStorage.setItem("nostalgicSongs", JSON.stringify(nostalgicArray));
+                    switchCall(".oldies", nostalgicObj, "Nostalgic", nostalgicArray, "nostalgicSongs");
                     break;
                 case document.getElementById("festive") :
-                    $(".christmas").append(songDiv, artDiv);
                     var festiveObj = {};
-                    festiveObj["song"] = song;
-                    festiveObj["artist"] = artist;
-                    festiveArray.push(festiveObj);
-                    localStorage.setItem("festiveSongs", JSON.stringify(festiveArray));
+                    switchCall(".christmas", festiveObj, "Festive", festiveArray, "festiveSongs");
                     break;
                 default :
                     break;
             };
 
-           
-
-            //Getting setItem to display onto History Screen
-            //     Localstorage.getItem
-            //     var x = JSON.parse(happyArray[1])
-            // localStorage.getItem("happySongs");
-            //     console.log(x);
-
-
-
-
-
-
-
-
         });
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-    
+        
     });
-    //This gets an ARRAY OF OBJECTS
-    var getHappy = JSON.parse(localStorage.getItem("happySongs"))
-    for (var i=0; i<getHappy.length;i++) {
-        var happyRet= getHappy[i]//Gives us an Object in the Array
-        //console.log(y);
-        happyRet.song;
-        happyRet.artist;
-        //console.log(y.song);
-        //console.log(y.artist);
-    
-    }
-    //console.log(x);
-    
-   var entry = $("<tr>")
-   var entryMood = $("<td>").text("Mood")
-   var entrySong = $("<td>").text(happyRet.song);
-   var entryArtist = $("<td>").text(happyRet.artist);
-   entry.append(entryMood, entrySong, entryArtist);
-   $("tbody").prepend(entry);
-   //$(includeEntrySong).text();
-   
 
-   //$(songEntry).text(x);
+    // moodSongs - "____Songs"
+    function getHistory (moodSongs) {
+        //This gets an ARRAY OF OBJECTS
+        var getMood = JSON.parse(localStorage.getItem(moodSongs));
+
+        function retMood(index){
+            var retrieve = getMood[index] //Gives us an Object in the Array
+            var entry = $("<tr>")
+            var entryMood = $("<td>").text(retrieve.mood)
+            var entrySong = $("<td>").text(retrieve.song);
+            var entryArtist = $("<td>").text(retrieve.artist);
+            entry.append(entryMood, entrySong, entryArtist);
+            $("tbody").prepend(entry);
+        };
+        for (var i=0; i<getMood.length; i++){
+            retMood(i);
+        }
+    };
+   
 
 
 
