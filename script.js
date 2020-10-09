@@ -25,7 +25,7 @@ $(document).ready(function(){
         var userBtn = e.target;
         var pickGenre = userBtn.getAttribute("data-genre");
         genreId = pickGenre
-
+        
         var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://api.musixmatch.com/ws/1.1/track.search?" + "f_music_genre_id="+ genreId + "&apikey=a0c16acc7fa27d7659942b310a49033d";
 
         // AJAX call for musixmatch
@@ -96,18 +96,24 @@ $(document).ready(function(){
         //This gets an ARRAY OF OBJECTS
         var getMood = JSON.parse(localStorage.getItem(moodSongs));
 
-        function retMood(index){
-            var retrieve = getMood[index] //Gives us an Object in the Array
-            var entry = $("<tr>")
-            var entryMood = $("<td>").text(retrieve.mood)
-            var entrySong = $("<td>").text(retrieve.song);
-            var entryArtist = $("<td>").text(retrieve.artist);
-            entry.append(entryMood, entrySong, entryArtist);
-            $("tbody").prepend(entry);
-        };
-        for (var i=0; i<getMood.length; i++){
-            retMood(i);
+        if (getMood !== null) {
+            function retMood(index){
+                var retrieve = getMood[index] //Gives us an Object in the Array
+                var entry = $("<tr>")
+                var entryMood = $("<td>").text(retrieve.mood)
+                var entrySong = $("<td>").text(retrieve.song);
+                var entryArtist = $("<td>").text(retrieve.artist);
+                entry.append(entryMood, entrySong, entryArtist);
+                $("tbody").prepend(entry);
+            };
+            for (var i=0; i<getMood.length; i++){
+                retMood(i);
+            }
         }
+        else {
+            return getMood; // null
+        }
+
     };
    
 
