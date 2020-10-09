@@ -19,6 +19,13 @@ $(document).ready(function(){
     var nostalgicArray = [];
     var festiveArray = [];
 
+    getHistory("happySongs");
+    getHistory("sadSongs");
+    getHistory("partySongs");
+    getHistory("studySongs");
+    getHistory("nostalgicSongs");
+    getHistory("festiveSongs");
+    
     $(document).on("click", "button", (e) => {
         var userBtn = e.target;
         var pickGenre = userBtn.getAttribute("data-genre");
@@ -127,24 +134,27 @@ $(document).ready(function(){
             };
 
         });
-    
+        
     });
-    //This gets an ARRAY OF OBJECTS
-    var getHappy = JSON.parse(localStorage.getItem("happySongs"));
 
-    function retHappy(index){
-        var happyRet= getHappy[index] //Gives us an Object in the Array
-        var entry = $("<tr>")
-        var entryMood = $("<td>").text(happyRet.mood)
-        var entrySong = $("<td>").text(happyRet.song);
-        var entryArtist = $("<td>").text(happyRet.artist);
-        entry.append(entryMood, entrySong, entryArtist);
-        $("tbody").prepend(entry);
+    // moodSongs - "____Songs"
+    function getHistory (moodSongs) {
+        //This gets an ARRAY OF OBJECTS
+        var getMood = JSON.parse(localStorage.getItem(moodSongs));
+
+        function retMood(index){
+            var retrieve = getMood[index] //Gives us an Object in the Array
+            var entry = $("<tr>")
+            var entryMood = $("<td>").text(retrieve.mood)
+            var entrySong = $("<td>").text(retrieve.song);
+            var entryArtist = $("<td>").text(retrieve.artist);
+            entry.append(entryMood, entrySong, entryArtist);
+            $("tbody").prepend(entry);
+        };
+        for (var i=0; i<getMood.length; i++){
+            retMood(i);
+        }
     };
-    for (var i=0; i<getHappy.length; i++){
-        retHappy(i);
-    }
-    
    
 
 
