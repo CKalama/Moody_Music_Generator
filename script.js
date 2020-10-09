@@ -78,11 +78,13 @@ $(document).ready(function(){
             var artist = ranTrack.track.artist_name;
             var songDiv = $("<div>");
             var artDiv = $("<div>");
-            songDiv.addClass("cell medium-3");
-            artDiv.addClass("cell medium-3");
+            songDiv.addClass("song-div cell medium-3");
+            artDiv.addClass("art-div cell medium-3");
             songDiv.text(song);
             artDiv.text(artist);
-            
+            $(".song-div").replaceWith(songDiv);
+            $(".art-div").replaceWith(artDiv);
+
             switch (userBtn) {
                 case document.getElementById("happy"):{
                     $(".pop").append(songDiv, artDiv)}
