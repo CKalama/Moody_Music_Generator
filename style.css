@@ -49,6 +49,16 @@ nav {
     font-size: 20px;
     color: black
 }
+.image-resize {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    float: left;
+}
+#about-image {
+    width: 600px;
+    height: 450px;
+}
 #welcome{
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
